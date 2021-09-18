@@ -1,0 +1,11 @@
+POST http://localhost:8081/v1/user
+Content-Type: application/json
+
+{
+    "name": "Gunish Matta",
+    "company": "Company name",
+    "address": "Some address",
+    "phone": "9999999999",
+    "email": "gunishmatta2@gmail.com",
+    "password": "matta1998"
+}

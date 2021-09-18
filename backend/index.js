@@ -8,8 +8,9 @@ const errorHandler = require("./src/utils/errorHandler");
 
 const port = 8081;
 
-app.use(helmet());
+// app.use(helmet());
 app.use(cors());
+app.use(express.json());
 
 //MongoDB Setup
 const mongoose = require("mongoose");
@@ -40,6 +41,12 @@ const userRouter = require("./src/routers/user.router");
 const ticketRouter = require("./src/routers/ticket.router");
 
 //use router
+
+app.get("/", (req, res) => {
+  res.status(200).json({
+    message: "Hello",
+  });
+});
 
 app.use("/v1/user", userRouter);
 app.use("/v1/ticket", ticketRouter);
