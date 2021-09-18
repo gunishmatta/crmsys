@@ -1,7 +1,9 @@
-const handleError = (error,res) =>{
+const handleError = (error, res) => {
+    
+    res.status(error.status||500)
     console.log(error)
     res.json({
-        error:error.message
+        message:error.message
     })
 }
 
